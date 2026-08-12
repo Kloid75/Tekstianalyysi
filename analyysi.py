@@ -16,17 +16,22 @@ while i == 0:
                     c += sum(1 for z in text if z not in (" ", "\n"))
                 print("Merkkien määrä:", c)
                 i += 1
-            if valinta == "2":
+            elif valinta == "2":
                 for text in teksti:
                     c += len(text.split())
                 print("Sanojen määrä:", c)
-            if valinta == "3":
+                i += 1
+            elif valinta == "3":
                 count = Counter(text for rivi in teksti for text in rivi.split())
                 print(count.most_common(5))
-            if valinta == "4":
+                i += 1
+            elif valinta == "4":
                 for text in teksti:
                     for z in text:
                         count = Counter(z for plong in text for z in plong.split())
                 print(count.most_common(5))
+                i += 1
+            else:
+                print("Virheellinen valinta.")
     except FileNotFoundError:
         print("Tiedostoa ei löytynyt.")
